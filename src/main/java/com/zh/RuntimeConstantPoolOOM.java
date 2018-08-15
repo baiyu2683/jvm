@@ -18,7 +18,7 @@ public class RuntimeConstantPoolOOM {
 
 
         //使用List保持着常量池引用，避免Full GC回收常量池的行为
-        List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<String>();
         int i = 0;
         while (true) {
             list.add(String.valueOf(i++).intern());
