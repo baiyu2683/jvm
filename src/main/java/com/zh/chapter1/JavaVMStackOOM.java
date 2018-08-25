@@ -1,4 +1,4 @@
-package com.zh;
+package com.zh.chapter1;
 
 /**
  * 通过创建线程导致内存溢出异常

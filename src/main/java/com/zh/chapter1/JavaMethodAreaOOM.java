@@ -1,4 +1,4 @@
-package com.zh;
+package com.zh.chapter1;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;

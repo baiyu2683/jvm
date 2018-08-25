@@ -1,4 +1,4 @@
-package com.zh;
+package com.zh.chapter1;
 
 /**
  * 栈深度过大时，方法区抛出StackOverflowError异常
