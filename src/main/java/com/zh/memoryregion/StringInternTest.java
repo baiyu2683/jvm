@@ -1,4 +1,4 @@
-package com.zh.chapter1;
+package com.zh.memoryregion;
 
 /**
  * 测试string.intern()方法

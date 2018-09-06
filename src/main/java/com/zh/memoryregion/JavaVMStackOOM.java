@@ -1,9 +1,14 @@
-package com.zh.chapter1;
+package com.zh.memoryregion;
 
 /**
- * 通过创建线程导致内存溢出异常
- * -Xss2m
- * 这个直接运行后系统卡死了，然后重启了，没看到效果。。。
+ * 栈 OutOfMemoryError
+ * 通过不断的创建线程达到目的
+ *
+ * 实测不管怎么设置下面参数，无法出现栈溢出。。。待查
+ *
+ * VM Args: -Xss2m
+ *
+ * @Author zh2683
  */
 public class JavaVMStackOOM {
 
@@ -25,7 +30,8 @@ public class JavaVMStackOOM {
     }
 
     public static void main(String[] args) {
-        JavaVMStackOOM vmStackOOM = new JavaVMStackOOM();
-        vmStackOOM.stackLeakByThread();
+        JavaVMStackOOM javaVMStackOOM = new JavaVMStackOOM();
+        javaVMStackOOM.stackLeakByThread();
     }
+
 }
