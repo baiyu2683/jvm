@@ -11,6 +11,7 @@ public class DeadLockTest {
     private final static Object second = new Object();
 
     public static void main(String[] args) throws IOException, InterruptedException {
+        System.out.println("打印");
         new Thread(new Runnable() {
             @Override
             public void run() {

@@ -29,3 +29,15 @@ public class JavaVMStackSOF {
         }
     }
 }
+//stack lenght:1515Exception in thread "main" java.lang.StackOverflowError
+//at com.zh.memoryregion.JavaVMStackSOF.stackLeak(JavaVMStackSOF.java:18)
+//at com.zh.memoryregion.JavaVMStackSOF.stackLeak(JavaVMStackSOF.java:19)
+//at com.zh.memoryregion.JavaVMStackSOF.stackLeak(JavaVMStackSOF.java:19)
+//at com.zh.memoryregion.JavaVMStackSOF.stackLeak(JavaVMStackSOF.java:19)
+//at com.zh.memoryregion.JavaVMStackSOF.stackLeak(JavaVMStackSOF.java:19)
+//at com.zh.memoryregion.JavaVMStackSOF.stackLeak(JavaVMStackSOF.java:19)
+//at com.zh.memoryregion.JavaVMStackSOF.stackLeak(JavaVMStackSOF.java:19)
+//at com.zh.memoryregion.JavaVMStackSOF.stackLeak(JavaVMStackSOF.java:19)
+//at com.zh.memoryregion.JavaVMStackSOF.stackLeak(JavaVMStackSOF.java:19)
+//at com.zh.memoryregion.JavaVMStackSOF.stackLeak(JavaVMStackSOF.java:19)
+//at com.zh.memoryregion.JavaVMStackSOF.stackLeak(JavaVMStackSOF.java:19)

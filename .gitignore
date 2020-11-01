@@ -7,3 +7,4 @@
 *.hprof
 /target/
 .*
+/bin/
