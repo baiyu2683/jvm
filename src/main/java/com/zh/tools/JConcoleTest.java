@@ -7,7 +7,7 @@ import java.util.List;
  * jconsole监控测试
  * jvmOption:-Xms100m -Xmx100m -XX:+UseSerialGC
  */
-public class JSoncoleTest {
+public class JConcoleTest {
 
     static class OOMObject {
         public byte[] placeholder = new byte[64 * 1024];
