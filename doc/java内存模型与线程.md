@@ -1,0 +1,117 @@
+# java内存模型与线程
+
+![image-20210109171133065](/home/cellophane/.config/Typora/typora-user-images/image-20210109171133065.png)
+
+
+
+## 硬件的效率与一致性
+
+![image-20210109172406879](/home/cellophane/.config/Typora/typora-user-images/image-20210109172406879.png)
+
+![image-20210109172421863](/home/cellophane/.config/Typora/typora-user-images/image-20210109172421863.png)
+
+## Java内存模型
+
+
+
+### 主内存与工作内存
+
+Java内存模型的主要目的是定义程序中各种变量的访问规则，即关注在虚拟机中把变量值存储到内存和从内存中取出变量值这样的底层细节。
+
+![image-20210111154927896](/home/cellophane/.config/Typora/typora-user-images/image-20210111154927896.png)
+
+![image-20210111155042023](/home/cellophane/.config/Typora/typora-user-images/image-20210111155042023.png)
+
+### 内存间交互操作
+
+![image-20210111160028214](/home/cellophane/.config/Typora/typora-user-images/image-20210111160028214.png)
+
+
+
+![image-20210111160523824](/home/cellophane/.config/Typora/typora-user-images/image-20210111160523824.png)
+
+![image-20210111160536159](/home/cellophane/.config/Typora/typora-user-images/image-20210111160536159.png)
+
+### 对于volatile型变量的特殊规则
+
+![image-20210111162004995](/home/cellophane/.config/Typora/typora-user-images/image-20210111162004995.png)
+
+![image-20210111162028007](/home/cellophane/.config/Typora/typora-user-images/image-20210111162028007.png)
+
+### 原子性、可见性和有序性
+
+![image-20210111164514294](/home/cellophane/.config/Typora/typora-user-images/image-20210111164514294.png)
+
+![image-20210111164527343](/home/cellophane/.config/Typora/typora-user-images/image-20210111164527343.png)
+
+![image-20210111164538359](/home/cellophane/.config/Typora/typora-user-images/image-20210111164538359.png)
+
+### 先行发生(Happens-Before)原则
+
+![image-20210111165136559](/home/cellophane/.config/Typora/typora-user-images/image-20210111165136559.png)
+
+![image-20210111165212144](/home/cellophane/.config/Typora/typora-user-images/image-20210111165212144.png)
+
+
+
+关于操作“时间上先发生”和“先行发生(Happens-Before)”的关系：
+
+1, 时间上先发生不代表这个操作是“先行发生”的，多个线程对普通共享变量的读些
+
+2, “先行发生”不代表这个操作是“时间上先发生”，指令会重排序，例如同一个线程中两行代码，按照程序次序规则应该是“先行发生的”，但是编译器可能会进行指令冲排序，实际执行时不一定是“时间上先发生”的。但是并不影响“先行发生”原则的正确性。
+
+结论： 时间先后顺序与先行发生原则之间基本没有因果关系，衡量并发安全问题的时候不要受时间顺序的干扰，一切必须以先行发生原则为准。
+
+
+
+## Java与线程
+
+### 线程的实现
+
+三种方式
+
+1. 使用内核线程实现（1：1实现）
+2. 使用用户线程实现（1：N实现）
+3. 使用用户线程加轻量级进程混合实现（N：M实现）
+
+![image-20210111171748347](/home/cellophane/.config/Typora/typora-user-images/image-20210111171748347.png)
+
+![image-20210111171801647](/home/cellophane/.config/Typora/typora-user-images/image-20210111171801647.png)
+
+![image-20210111171818226](/home/cellophane/.config/Typora/typora-user-images/image-20210111171818226.png)
+
+![image-20210111171832749](/home/cellophane/.config/Typora/typora-user-images/image-20210111171832749.png)
+
+![image-20210111171843686](/home/cellophane/.config/Typora/typora-user-images/image-20210111171843686.png)
+
+![image-20210111171905439](/home/cellophane/.config/Typora/typora-user-images/image-20210111171905439.png)
+
+![image-20210111171915344](/home/cellophane/.config/Typora/typora-user-images/image-20210111171915344.png)
+
+![image-20210111171923735](/home/cellophane/.config/Typora/typora-user-images/image-20210111171923735.png)
+
+### Java线程调度
+
+![image-20210111172633495](/home/cellophane/.config/Typora/typora-user-images/image-20210111172633495.png)
+
+### 状态转换
+
+java语言定义了六种线程状态，***在任意一个时间点，一个线程只能有且只有其中的一种状态，并且可以通过特定的方法在不同状态之间转换***
+
+![image-20210111173155521](/home/cellophane/.config/Typora/typora-user-images/image-20210111173155521.png)
+
+![image-20210111173209487](/home/cellophane/.config/Typora/typora-user-images/image-20210111173209487.png)
+
+![image-20210111173340857](/home/cellophane/.config/Typora/typora-user-images/image-20210111173340857.png)
+
+## Java与协程
+
+![image-20210111175328752](/home/cellophane/.config/Typora/typora-user-images/image-20210111175328752.png)
+
+![image-20210111175343048](/home/cellophane/.config/Typora/typora-user-images/image-20210111175343048.png)
+
+![image-20210111175354391](/home/cellophane/.config/Typora/typora-user-images/image-20210111175354391.png)
+
+![image-20210111175409173](/home/cellophane/.config/Typora/typora-user-images/image-20210111175409173.png)
+
+![image-20210111175423865](/home/cellophane/.config/Typora/typora-user-images/image-20210111175423865.png)
