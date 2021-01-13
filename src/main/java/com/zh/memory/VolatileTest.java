@@ -1,7 +1,7 @@
 package com.zh.memory;
 
 /**
- * TODO 代码不能完成
+ *
  */
 public class VolatileTest {
     public static volatile int race = 0;
